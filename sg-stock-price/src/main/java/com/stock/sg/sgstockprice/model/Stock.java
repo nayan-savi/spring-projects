@@ -1,6 +1,8 @@
 package com.stock.sg.sgstockprice.model;
 
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import org.springframework.stereotype.Component;
 
 import javax.persistence.*;
@@ -13,6 +15,7 @@ import java.sql.Date;
 public class Stock implements Serializable {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
+    @JsonIgnore
     private long id;
     @Column(name = "s_date")
     private Date date;
