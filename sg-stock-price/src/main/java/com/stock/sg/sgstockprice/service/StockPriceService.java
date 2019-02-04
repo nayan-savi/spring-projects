@@ -28,4 +28,8 @@ public class StockPriceService {
         List<Stock> stocks = stockRepository.getStocksByDateGreaterThanEqualAndDateLessThan(from_date, to_date);
         return stocks;
     }
+    @GetMapping("/symbols")
+    public List<String> getSymbols(){
+        return stockRepository.getSymbol();
+    }
 }
